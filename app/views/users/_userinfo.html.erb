@@ -1,0 +1,17 @@
+
+
+
+
+
+
+<h3>New Book</h3>
+
+<% form_with model:book, local:true do |f| %>
+
+<p>Title</p>
+<div><%= f.text_field :title, placeholder: "Title" %></div>
+<p>Body</p>
+<div><%= f.text_field :body, placeholder: "Body" %></div>
+
+<p><%= f.submit "Create Book" %></p>
+<% end %>

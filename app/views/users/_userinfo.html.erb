@@ -9,9 +9,9 @@
 <div><%= form_with model:Book.new, local:true do |f| %>
 
     <p>Title</p>
-    <div><%= f.text_field :title, placeholder: "Title" %></div>
+    <div><%= f.text_field :title, autofocus: true, placeholder: "Title" %></div>
     <p>Body</p>
-    <div><%= f.text_field :body, placeholder: "Body" %></div>
+    <div><%= f.text_area :body, autofocus: true, placeholder: "Body" %></div>
 
     <p><%= f.submit "Create Book" %></p>
 

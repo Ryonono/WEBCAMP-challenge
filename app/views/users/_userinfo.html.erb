@@ -1,4 +1,16 @@
+<h3>User Info</h3>
 
+<div><%= attachment_image_tag current_user, :profile_image %></div>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><%= current_user.name %></td>
+    </tr>
+    <tr>
+      <td>Introduction</td>
+      <td><%= current_user.introduction %></td>
+    </tr>
+  </table>
 
 
 
@@ -6,7 +18,7 @@
 
 <h3>New Book</h3>
 
-<div><%= form_with model:Book.new, local:true do |f| %>
+<div><%= form_with model:@book, local:true do |f| %>
 
     <p>Title</p>
     <div><%= f.text_field :title, autofocus: true, placeholder: "Title" %></div>

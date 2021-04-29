@@ -1,3 +1,5 @@
+<%= render 'users/userinfo', book: @book %>
+
 <h1>Books Detail</h1>
 <table>
   <tr>
@@ -5,7 +7,7 @@
     <%= @book.user.name %></td>
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
-    <td>edit</td>
-    <td>destroy</td>
+    <td><%= link_to "Edit", edit_book_path(@book) %></td>
+    <td><%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: 'Are you Sure to destroy?' } %></td>
   </tr>
 </table>

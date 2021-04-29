@@ -1,18 +1,18 @@
-<%= render 'userinfo', user: @user %>
+<%= render 'userinfo', user: @user, book: @book %>
 
 
 <h1>Users</h1>
 <table>
   <tr>
+    <th>Image</th>
     <th>Name</th>
     <th></th>
-    <th></th>
   </tr>
-  <tr>
     <% @users.each do |user| %>
+  <tr>
+    <td><%= user.profile_image %></td>
     <td><%= user.name %></td>
-    <td><%= user.name %></td>
-    <td><%= user.name %></td>
-    <% end %>
+    <td><%= link_to "Show", user_path(@user) %></td>
   </tr>
+  <% end %>
 </table>

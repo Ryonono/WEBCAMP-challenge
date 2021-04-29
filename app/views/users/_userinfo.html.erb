@@ -1,6 +1,6 @@
 <h3>User Info</h3>
 
-<div><%= attachment_image_tag current_user, :profile_image %></div>
+  <div><%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg" %></div>
   <table>
     <tr>
       <td>Name</td>
@@ -11,6 +11,11 @@
       <td><%= current_user.introduction %></td>
     </tr>
   </table>
+
+  <%= link_to "", edit_user_path(current_user) %>
+    <button　type="submit", name="Profile Edit"></button>
+ @
+
 
 
 

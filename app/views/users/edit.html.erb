@@ -1,2 +1,9 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>User Info</h1>
+
+<%= form_with model:current_user, local:true do |f| %>
+
+<div><%= f.text_field :name, autofocus: true, placeholder: "Name" %></div>
+<div><%= f.attachment_field :profile_image, autofocus: true, placeholder: "Image" %></div>
+<div><%= f.text_area :introduction, autofocus: true, placeholder: "Introduction" %></div>
+
+<% end %>

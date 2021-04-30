@@ -12,19 +12,20 @@
       <td><%= current_user.introduction %></td>
     </tr>
   </table>
-
-  <%= link_to "Profile Edit", edit_user_path(current_user), class: "btn btn-secondary" %>
+  <% if user == current_user %>
+    <%= link_to "Profile Edit", edit_user_path(current_user), class: "btn btn-secondary" %>
+  <% end %>
 
 
 <h3>New Book</h3>
 
 <div>
-  <%= form_with model:book, local:true do |f| %>
-  <% if book.errors.any? %>
+  <%= form_with model:book_new, local:true do |f| %>
+  <% if book_new.errors.any? %>
     <div id="error_explanation">
-      <h2><%= book.errors.count %> of the parameters is in error.</h2>
+      <h2><%= book_new.errors.count %> of the parameters is in error.</h2>
       <ul>
-      <% book.errors.full_messages.each do |message| %>
+      <% book_new.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

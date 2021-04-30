@@ -1,20 +1,25 @@
 <%= render 'users/userinfo', user: @user, book: @book %>
 
+<div class="col-lg-9">
 <h1>Books</h1>
 
 <div>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Title</th>
       <th>Opinion</th>
+      <th></th>
+      <th></th>
     </tr>
     <%= @books.each do |book| %>
     <tr>
       <td><%= book.title %></td>
       <td><%= book.body %></td>
-      <td><%= link_to "Edit", edit_book_path(book) %></td>
-      <td><%= link_to "Destroy", book_path(book), method: :delete, data: { confirm: 'Are you Sure to destroy?' } %></td>
+      <td><%= link_to "Edit", edit_book_path(book), class: "btn btn-secondary" %></td>
+      <td><%= link_to "Destroy", book_path(book), method: :delete, data: { confirm: 'Are you Sure to destroy?' }, class: "btn btn-secondary" %></td>
     </tr>
     <% end %>
   </table>
+</div>
+
 </div>

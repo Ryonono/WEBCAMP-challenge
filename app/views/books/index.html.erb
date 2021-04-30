@@ -1,11 +1,13 @@
 <%= render 'users/userinfo', book: @book %>
 
+<div class="col-lg-9">
 <h1>Books</h1>
 
 <table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Opinion</th>
+    <th></th>
   </tr>
   <% @books.each do |book| %>
   <tr>
@@ -18,4 +20,5 @@
    <% end %>
 </table>
 
+</div>
 

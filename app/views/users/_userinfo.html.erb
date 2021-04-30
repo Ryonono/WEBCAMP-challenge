@@ -13,7 +13,7 @@
     </tr>
   </table>
 
-  <%= link_to "Profile Edit", edit_user_path(current_user) %>
+  <%= link_to "Profile Edit", edit_user_path(current_user), class: "btn btn-secondary" %>
 
 
 <h3>New Book</h3>
@@ -35,7 +35,7 @@
   <div><%= f.text_field :title, autofocus: true, placeholder: "Title" %></div>
   <p>Body</p>
   <div><%= f.text_area :body, autofocus: true, placeholder: "Body" %></div>
-  <p><%= f.submit "Create Book" %></p>
+  <p><%= f.submit "Create Book", class: "btn btn-secondary" %></p>
 
   <% end %>
 </div>

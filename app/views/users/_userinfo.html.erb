@@ -1,19 +1,19 @@
 <div class="col-lg-3">
   <h3>User Info</h3>
 
-  <div><%= attachment_image_tag current_user, :profile_image, fallback: "no_image.jpg", size: "100x100" %></div>
+  <div><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "100x100" %></div>
   <table>
     <tr>
       <td>Name</td>
-      <td><%= current_user.name %></td>
+      <td><%= user.name %></td>
     </tr>
     <tr>
       <td>Introduction</td>
-      <td><%= current_user.introduction %></td>
+      <td><%= user.introduction %></td>
     </tr>
   </table>
   <% if user == current_user %>
-    <%= link_to "Profile Edit", edit_user_path(current_user), class: "btn btn-secondary" %>
+    <%= link_to "Profile Edit", edit_user_path(user), class: "btn btn-secondary" %>
   <% end %>
 
 

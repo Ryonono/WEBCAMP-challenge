@@ -1,10 +1,11 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.all
+    @books = Book.page(params[:page]).reverse_order
     @book_new = Book.new
-    #@book = @user.book
+    #@user = book.user
     #@book = Book.find(params[:id])
+    @user = current_user
   end
 
   def create
@@ -48,6 +49,7 @@ class BooksController < ApplicationController
   def book_params
    params.require(:book).permit(:title, :body)
   end
+
 
 
 

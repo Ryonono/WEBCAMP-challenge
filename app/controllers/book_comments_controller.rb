@@ -12,9 +12,10 @@ class BookCommentsController < ApplicationController
 
   def destroy
     @book = Book.find(params[:book_id])
+    #book_commentのidとbookのidを両方同時に探す
     @comment =BookComment.find_by(id: params[:id],book_id: params[:book_id])
     @comment.destroy
-    redirect_to book_path(params[:book_id])
+    redirect_to book_path(@book)
   end
 
   private

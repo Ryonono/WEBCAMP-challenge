@@ -1,3 +1,4 @@
+<div class="col-lg-12">
 <h1>User Info</h1>
 
 <%= form_with model:@user, local:true do |f| %>
@@ -12,8 +13,8 @@
     </div>
   <% end %>
 
-<div><%= f.text_field :name, autofocus: true, placeholder: "Name" %></div>
-<div><%= f.attachment_field :profile_image, autofocus: true, placeholder: "Image" %></div>
+<div><%= f.text_field :name, autofocus: true, placeholder: "Name" %></div><br>
+<div><%= f.attachment_field :profile_image, autofocus: true, placeholder: "Image" %></div><br>
 <div><%= f.text_area :introduction, autofocus: true, placeholder: "Introduction" %></div>
 <div><%= f.submit "Update User", class: "btn btn-secondary" %></div>
 

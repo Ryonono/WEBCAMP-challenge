@@ -1,16 +1,14 @@
 <%= render 'users/userinfo', user: @user, book_new: @book_new %>
 
 <div class="col-lg-9">
-<h1>Books</h1>
-
-<div>
+　<h1>Books</h1>
   <table class="table table-striped">
     <tr>
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
     </tr>
-    <%= @user.books.each do |book| %>
+    <% @user.books.each do |book| %>
     <tr>
       <% if @user == current_user %>
         <td>
@@ -24,6 +22,4 @@
     </tr>
     <% end %>
   </table>
-</div>
-
 </div>

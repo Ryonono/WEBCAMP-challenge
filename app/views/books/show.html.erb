@@ -19,24 +19,22 @@
           ♥<%= @book.favorites.count %> いいね
         <% end %>
       <% else %>
-      <!-- ここが初めmethod: :deleteになっていたから、初めからdestroyアクションが呼び起こされて、NoMethodErrorが出ていた--!>
+       <!--ここが初めmethod: :deleteになっていたから、初めからdestroyアクションが呼び起こされて、NoMethodErrorが出ていた-->
         <%= link_to book_favorites_path(@book), method: :post do %>
-          ♡<%= @book.favorites.count %> いいね
+          ♡<%= @book.favorites.count %>
         <% end %>
       <% end %>
     </td>
     <td>コメント数：<%= @book.book_comments.count %></td>
     <% if @book.user == current_user %>
-      <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-secondary" %></td>
-      <td><%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: 'Are you Sure to destroy?' }, class: "btn btn-secondary" %></td>
+      <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-warning" %></td>
+      <td><%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: 'Are you Sure to destroy?'}, class: "btn btn-danger" %></td>
     <% end %>
   </tr>
 </table>
 
-<div class="comments">
-
   <table class="table table-striped">
-    <% @bookcomments.each do |comment| %>
+    <% @book.book_comments.each do |comment| %>
       <tr>
         <td>
           <%= link_to user_path(comment.user) do %>
@@ -48,18 +46,21 @@
         <td><%= comment.comment %></td>
         <td>
           <% if comment.user == current_user %>
-            <%= link_to "Destroy", book_book_comment_path(@book,comment), method: :delete, class: "btn btn-secondary" %>
+            <%= link_to "Destroy", book_book_comment_path(@book,comment), method: :delete, class: "btn btn-danger" %>
            <% end %>
         </td>
       </tr>
     <% end %>
   </table>
 
+  <div class="container-fluid">
   <%= form_with model:[@book,@bookcomment], local:true do |f| %>
-    <div>
-    <%= f.text_area :comment, placeholder: "please write down your comment" %>
-    </div>
-    <div><%= f.submit "Submit" %></div>
+    
+      <%= f.text_area :comment, placeholder: "please write down your comment!" %><br/>
+    
+    <%= f.submit "Submit", class: "btn btn-success" %>
+    
   <% end %>
+  </div>
 
 </div>

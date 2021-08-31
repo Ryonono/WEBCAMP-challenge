@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
+    flash[:success] = "Welcome! You have successfully come to our Bookers!!"
     user_path(current_user.id)
   end
 

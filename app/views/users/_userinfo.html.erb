@@ -1,4 +1,9 @@
 <div class="col-lg-3">
+  
+  <% if flash[:success] %>
+    <p style="color: green;"><%= flash[:success] %></p>
+  <% end %>
+  
   <h3>User Info</h3>
 
   <div><%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg", size: "100x100" %></div>
@@ -13,7 +18,7 @@
     </tr>
   </table>
   <% if user == current_user %>
-    <%= link_to "Profile Edit", edit_user_path(user), class: "btn btn-secondary" %>
+    <%= link_to "Profile Edit", edit_user_path(user), class: "btn btn-success" %>
   <% end %>
 
 
@@ -36,7 +41,7 @@
   <div><%= f.text_field :title, autofocus: true, placeholder: "Title" %></div>
   <p>Body</p>
   <div><%= f.text_area :body, autofocus: true, placeholder: "Body" %></div>
-  <p><%= f.submit "Create Book", class: "btn btn-secondary" %></p>
+  <p><%= f.submit "Create Book", class: "btn btn-success" %></p>
 
   <% end %>
 </div>

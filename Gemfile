@@ -67,9 +67,11 @@ gem "refile-mini_magick"
 
 gem 'pry-rails'
 
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'jquery-rails'
-gem 'bootstrap', '~> 4.5'
+
+#ここでbootstrapとbootstrap-sassがconflictを起こしていたことが、うまくレイアウトがまとまらない原因だった
+#gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
+
 gem 'kaminari','~> 1.2.1'

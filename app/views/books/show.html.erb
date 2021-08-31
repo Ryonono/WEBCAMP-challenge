@@ -14,7 +14,7 @@
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
     <td>
-      <%= render 'favorites', book: @book %>
+      <%= render 'favorites/favorites', book: @book %>
       <!--いいね機能の部分テンプレート化-->
     </td>
     <td>コメント数：<%= @book.book_comments.count %></td>

@@ -18,8 +18,8 @@
       <% end %></td>
     <td><%= link_to book.title, book_path(book.id) %></td>
     <td><%= book.body %></td>
-    <!--この書き方でjsファイルを呼び出すことができるらしい-->
-    <td class=<%= "table__favorite--" + book.id.to_s %> >
+    <!--この書き方でjsファイルを呼び出すことができるらしい html.erbではclassを全てrubyの記述として書く-->
+    <td class=<%= "favorite_button" + book.id.to_s %> >
       <!--いいね機能の部分テンプレート化-->
       <%= render 'favorites/favorites', book: book %>
     </td>

@@ -14,7 +14,7 @@
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
     <!--この書き方でjsファイルを呼び出すことができるらしい-->
-    <td class=<%= "table__favorite--" + @book.id.to_s %> >
+    <td class="favorite_button" >
       <!--いいね機能の部分テンプレート化-->
       <%= render 'favorites/favorites', book: @book %>
     </td>

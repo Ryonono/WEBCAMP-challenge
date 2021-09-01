@@ -1,3 +1,7 @@
-$('.table__favorite--' + <%= @book.id %>).html("<%= j(render 'favorites/favorites', book: @book) %>")
+<!--show画面-->
+$(".favorite_button").html("<%= j(render 'favorites/favorites', book: @book) %>")
+
+<!--index画面-->
+$(".favorite_button" + <%= @book.id %>) .html("<%= j(render 'favorites/favorites', book: @book) %>")
 
  <!--@book.id.to_sをそのまま引用していたら、何回もいいねが押せたり消せたりしてしまっていたので、この部分はbook.idのみで良い-->

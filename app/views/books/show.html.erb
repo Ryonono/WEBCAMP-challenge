@@ -14,7 +14,7 @@
     <td><%= @book.title %></td>
     <td><%= @book.body %></td>
     <!--この書き方でjsファイルを呼び出すことができるらしい-->
-    <td class=<%= "table__favorite--" + book.id.to_s %> >
+    <td class=<%= "table__favorite--" + @book.id.to_s %> >
       <!--いいね機能の部分テンプレート化-->
       <%= render 'favorites/favorites', book: @book %>
     </td>
@@ -47,7 +47,8 @@
   </table>
 
   <div class="container-fluid">
-  <%= form_with model:[@book,@bookcomment], local:true do |f| %>
+    <!--remote: trueにする-->
+  <%= form_with model:[@book,@bookcomment], remote: true do |f| %>
     
       <%= f.text_area :comment, placeholder: "please write down your comment!" %><br/>
     

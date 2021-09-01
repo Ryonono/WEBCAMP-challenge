@@ -7,7 +7,8 @@ class BookCommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.book_id = @book.id
     @comment.save
-    redirect_to book_path(@book.id)
+    # remote trueを用いる
+    # redirect_to book_path(@book.id)
   end
 
   def destroy
@@ -15,7 +16,7 @@ class BookCommentsController < ApplicationController
     #book_commentのidとbookのidを両方同時に探す
     @comment =BookComment.find_by(id: params[:id],book_id: params[:book_id])
     @comment.destroy
-    redirect_to book_path(@book)
+    # redirect_to book_path(@book)
   end
 
   private

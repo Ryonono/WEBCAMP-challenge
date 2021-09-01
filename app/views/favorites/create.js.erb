@@ -1,4 +1,3 @@
-$().html ("<%= render 'favorites/favorites', book: @book %>" )
+$('.table__favorite--' + <%= @book.id %>).html("<%= j(render 'favorites/favorites', book: @book) %>")
 
-
-<!--$('.table__favorite--'+<%#= @favorite.book_id %>).html-->
+ <!--@book.id.to_sをそのまま引用していたら、何回もいいねが押せたり消せたりしてしまっていたので、この部分はbook.idのみで良い-->
